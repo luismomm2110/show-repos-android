@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:scroll_repos/RepoSlider.dart';
 import 'package:scroll_repos/UserName.dart';
-import 'package:scroll_repos/RepoList.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 const kNameStyle = TextStyle(
   fontSize: 30.0,
@@ -9,10 +8,9 @@ const kNameStyle = TextStyle(
 );
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({required this.user, required this.repoList});
+  const ResultScreen({required this.user});
 
   final UserName user;
-  final RepoList repoList;
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +26,10 @@ class ResultScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(user.login, style: kNameStyle),
-                    Text(repoList.listRepos[0].name!, style: kNameStyle),
-                    Text(repoList.listRepos[0].description!, style: kNameStyle),
-                    Text(repoList.listRepos[0].htmlUrl!, style: kNameStyle,)
+                     RepoSlider(userLogin: user.login)
                   ],
                  ),
-                )
+                ),
               ],
             )
           ),
