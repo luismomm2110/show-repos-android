@@ -1,4 +1,8 @@
 import "package:flutter/material.dart";
+import 'package:scroll_repos/UserName.dart';
+import 'package:scroll_repos/result_screen.dart';
+import 'package:scroll_repos/RepoList.dart';
+import 'package:scroll_repos/fetch_repo.dart';
 
 class SearchRepo extends StatefulWidget {
   const SearchRepo({Key? key}) : super(key: key);
@@ -9,6 +13,8 @@ class SearchRepo extends StatefulWidget {
 
 class _SearchRepoState extends State<SearchRepo> {
   String? userLogin;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +31,7 @@ class _SearchRepoState extends State<SearchRepo> {
                 padding: EdgeInsets.all(20.0),
                 child: TextField(
                   style: TextStyle(
-                    fontSize: 10.0,
+                    fontSize: 40.0,
                   ),
                   onChanged: (value) {
                     userLogin = value;
@@ -34,12 +40,14 @@ class _SearchRepoState extends State<SearchRepo> {
               ),
               TextButton(
                   onPressed: () async {
-                    UserRepo userRepo = await FetchRepos.fetchRepos(
-                      userName!.toLowerCase());
+                    UserName user = await FetchRepos.fetchUser(
+                      userLogin!.toLowerCase());
+                    RepoList repoList = await FetchRepos.fetchRepos(
+                      userLogin!.toLowerCase());
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) {
-                        return RepoMenu(userName: userName);
+                        return ResultScreen(user: user, repoList: repoList);
                       }),
                     );
                   },

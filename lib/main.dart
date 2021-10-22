@@ -7,7 +7,7 @@ void main() {
   runApp(ScrollRepos());
 }
 
-class ScrollRepos extends StatefulWidget {
+class ScrollRepos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
