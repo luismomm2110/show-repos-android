@@ -1,0 +1,51 @@
+{
+  "login": "luismomm2110",
+  "id": 68029829,
+  "node_id": "MDQ6VXNlcjY4MDI5ODI5",
+  "avatar_url": "https://avatars.githubusercontent.com/u/68029829?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/luismomm2110",
+  "html_url": "https://github.com/luismomm2110",
+  "followers_url": "https://api.github.com/users/luismomm2110/followers",
+  "following_url": "https://api.github.com/users/luismomm2110/following{/other_user}",
+  "gists_url": "https://api.github.com/users/luismomm2110/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/luismomm2110/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/luismomm2110/subscriptions",
+  "organizations_url": "https://api.github.com/users/luismomm2110/orgs",
+  "repos_url": "https://api.github.com/users/luismomm2110/repos",
+  "events_url": "https://api.github.com/users/luismomm2110/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/luismomm2110/received_events",
+  "type": "User",
+  "site_admin": false,
+  "name": "Luis Antonio Momm Duarte",
+  "company": null,
+  "blog": "",
+  "location": "Joinville ",
+  "email": null,
+  "hireable": null,
+  "bio": "hi",
+  "twitter_username": null,
+  "public_repos": 18,
+  "public_gists": 0,
+  "followers": 5,
+  "following": 19,
+  "created_at": "2020-07-08T19:18:33Z",
+  "updated_at": "2021-10-08T00:10:40Z",
+  "repos": [
+    {
+      "name" : "foo",
+      "html_url" : "foo.com",
+      "description" : "foo"
+    },
+    {
+      "name" : "bar",
+      "html_url" : "bar.com",
+      "description" : "bar"
+    },
+    {
+      "name" : "baz",
+      "html_url" : "baz.com",
+      "description" : "baz"
+    }
+  ]
+}
