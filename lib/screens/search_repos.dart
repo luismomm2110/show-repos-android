@@ -43,14 +43,10 @@ class _SearchRepoState extends State<SearchRepo> {
               ),
               TextButton(
                   onPressed: () async {
-                    UserName user = await FetchRepos.fetchUser(
-                      userLogin!);
-                    RepoList repoList = await FetchRepos.fetchRepos(
-                      userLogin!);
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) {
-                        return ResultScreen(user: user, repoList: repoList);
+                        return ResultScreen(userLogin: userLogin!);
                       }),
                     );
                   },

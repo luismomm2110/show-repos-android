@@ -1,3 +1,5 @@
+import 'package:scroll_repos/models/RepoList.dart';
+
 class UserName{
   UserName({
     required this.login, required this.avatar,
