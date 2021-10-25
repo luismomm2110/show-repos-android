@@ -1,7 +1,7 @@
-import 'package:scroll_repos/Repo.dart';
-import 'package:scroll_repos/fetch.dart';
-import 'package:scroll_repos/UserName.dart';
-import 'RepoList.dart';
+import 'package:scroll_repos/models/Repo.dart';
+import 'package:scroll_repos/api/fetch.dart';
+import 'package:scroll_repos/models/User.dart';
+import '../models/RepoList.dart';
 
 const kAPIBaseUrl = 'https://api.github.com/users';
 
@@ -20,7 +20,4 @@ class FetchRepos{
     return UserName.fromJson(response);
 
   }
-
-
-
 }

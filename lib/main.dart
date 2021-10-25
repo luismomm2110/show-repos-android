@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import "package:scroll_repos/search_repos.dart";
+import 'package:scroll_repos/screens/search_repos.dart';
 
 
 void main() {

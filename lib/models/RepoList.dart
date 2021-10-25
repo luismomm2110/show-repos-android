@@ -1,4 +1,4 @@
-import 'package:scroll_repos/Repo.dart';
+import 'package:scroll_repos/models/Repo.dart';
 
 class RepoList{
   final List<Repo> listRepos;
@@ -10,7 +10,6 @@ class RepoList{
 
 
   factory RepoList.fromJson(List<dynamic> parsedJson) {
-
 
     List<Repo> repoList = List<Repo>.from(parsedJson.map((i) => Repo.fromJson(i)).toList());
 

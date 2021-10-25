@@ -1,8 +1,9 @@
 import "package:flutter/material.dart";
-import 'package:scroll_repos/UserName.dart';
-import 'package:scroll_repos/result_screen.dart';
-import 'package:scroll_repos/RepoList.dart';
-import 'package:scroll_repos/fetch_repo.dart';
+import 'package:scroll_repos/models/User.dart';
+import 'package:scroll_repos/screens/result_screen.dart';
+import 'package:scroll_repos/models/RepoList.dart';
+import 'package:scroll_repos/api/fetch_repo.dart';
+import 'package:scroll_repos/repos_theme.dart';
 
 class SearchRepo extends StatefulWidget {
   const SearchRepo({Key? key}) : super(key: key);
@@ -14,19 +15,21 @@ class SearchRepo extends StatefulWidget {
 class _SearchRepoState extends State<SearchRepo> {
   String? userLogin;
 
-
+  final theme = Themes.dark();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          title: Text('Show your repos',
+              style: theme.textTheme.headline6),
+        backgroundColor: Colors.black,
+      ),
       body: Container(
         constraints: BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
             children: [
-              Text('Text Github login',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-              ),
               Container(
                 padding: EdgeInsets.all(20.0),
                 child: TextField(
@@ -41,9 +44,9 @@ class _SearchRepoState extends State<SearchRepo> {
               TextButton(
                   onPressed: () async {
                     UserName user = await FetchRepos.fetchUser(
-                      userLogin!.toLowerCase());
+                      userLogin!);
                     RepoList repoList = await FetchRepos.fetchRepos(
-                      userLogin!.toLowerCase());
+                      userLogin!);
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) {
@@ -52,9 +55,10 @@ class _SearchRepoState extends State<SearchRepo> {
                     );
                   },
                   child: Text(
-                    'Search for repositories of a user!',
+                    'Insert a Github username',
                     style: TextStyle(
-                        fontSize: 20.0,
+                        fontSize: 30.0,
+                        color: Colors.black,
                       )
                     ),
                   )
