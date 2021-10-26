@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_repos/api/fetch_repo.dart';
-import 'package:scroll_repos/models/User.dart';
-import 'package:scroll_repos/models/RepoList.dart';
+import 'package:scroll_repos/components/repo_list_view.dart';
 import 'package:scroll_repos/models/UserRepos.dart';
 
 const kPlaceholderImg = '../assets/octocat.png';
@@ -21,13 +20,14 @@ class ResultScreen extends StatelessWidget {
     return FutureBuilder(
       future: FetchRepos().getUserRepos(userLogin),
       builder: (context, AsyncSnapshot<UserRepos> snapshot) {
+
         if (snapshot.connectionState == ConnectionState.done) {
-          final userRepos = snapshot.data?.repoList ?? [];
-          return Center(
-            child: Container(
-              child: const Text("Repo"),
-            ),
-          );
+          return Column(
+            children: [
+              Text("foo"),
+              RepoListView(repoList: snapshot.data?.repoList ?? []),
+        ]
+        );
         } else {
           return const Center(
             child: CircularProgressIndicator(),

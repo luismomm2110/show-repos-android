@@ -9,7 +9,7 @@ class Themes {
         fontWeight: FontWeight.w600,
         color: Colors.white),
     headline1: GoogleFonts.openSans(
-        fontSize: 32.0,
+        fontSize: 20.0,
         fontWeight: FontWeight.bold,
         color: Colors.white),
     headline2: GoogleFonts.openSans(

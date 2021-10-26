@@ -1,8 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:scroll_repos/models/User.dart';
 import 'package:scroll_repos/screens/result_screen.dart';
-import 'package:scroll_repos/models/RepoList.dart';
-import 'package:scroll_repos/api/fetch_repo.dart';
 import 'package:scroll_repos/repos_theme.dart';
 
 class SearchRepo extends StatefulWidget {

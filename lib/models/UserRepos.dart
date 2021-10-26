@@ -1,12 +1,12 @@
-import 'package:scroll_repos/models/RepoList.dart';
+import 'package:scroll_repos/models/Repo.dart';
 import 'package:scroll_repos/models/User.dart';
 
 class UserRepos{
-  final UserName user;
-  final RepoList repoList;
+  final UserName userData;
+  final List<Repo> repoList;
 
-  UserRepos (
+  UserRepos(
       this.repoList,
-      this.user,
+      this.userData,
       );
 }
