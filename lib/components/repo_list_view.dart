@@ -26,7 +26,8 @@ class RepoListView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 15),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text("Repository",
                     style: theme.headline1

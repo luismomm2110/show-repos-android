@@ -1,6 +1,6 @@
 import 'package:scroll_repos/models/Repo.dart';
 import 'package:scroll_repos/api/fetch.dart';
-import 'package:scroll_repos/models/User.dart';
+import 'package:scroll_repos/models/UserName.dart';
 import 'package:scroll_repos/models/UserRepos.dart';
 const kAPIBaseUrl = 'https://api.github.com/users';
 
@@ -8,7 +8,7 @@ class FetchRepos{
 
   Future<UserRepos> getUserRepos(login) async {
     final repoList = await fetchRepos(login);
-    final user = await _fetchUser(login);
+    final user = await fetchUser(login);
 
     return UserRepos(repoList, user);
   }
@@ -23,7 +23,7 @@ class FetchRepos{
   }
 
 
-  static Future<UserName> _fetchUser(String login) async {
+  static Future<UserName> fetchUser(String login) async {
     final String url =  '$kAPIBaseUrl/$login';
     final response = await Fetch.getData(url);
 

@@ -1,5 +1,5 @@
 import 'package:scroll_repos/models/Repo.dart';
-import 'package:scroll_repos/models/User.dart';
+import 'package:scroll_repos/models/UserName.dart';
 
 class UserRepos{
   final UserName userData;

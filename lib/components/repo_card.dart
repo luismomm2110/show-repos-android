@@ -9,7 +9,8 @@ class RepoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Expanded(
+        child: Container(
       decoration: BoxDecoration(color: Colors.white),
       constraints: BoxConstraints(
         maxWidth: 350,
@@ -29,14 +30,14 @@ class RepoCard extends StatelessWidget {
                 repo.name!,
                 style: TextStyle(fontSize: 20, color: Colors.black),
                 overflow: TextOverflow.ellipsis,
-              )
-              )
+              ))
             ],
           ),
           SizedBox(height: 40),
-          Text(repo.description!, style: TextStyle(fontSize: 25, color: Colors.black)),
+          Text(repo.description!,
+              style: TextStyle(fontSize: 25, color: Colors.black)),
         ],
       ),
-    );
+    ));
   }
 }
