@@ -22,18 +22,19 @@ class ResultScreen extends StatelessWidget {
       future: FetchRepos().getUserRepos(userLogin),
       builder: (context, AsyncSnapshot<UserRepos> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          return Container(
-              height: 600,
-              child: SafeArea(
-                  child: Column(children: [
-                        UserCard(
-                            userName: snapshot.data?.userData.login ?? "",
-                            avatar: snapshot.data?.userData.avatar ?? ""),
-                        RepoListView(repoList: snapshot.data?.repoList ?? []),
-                        ]
-                  )
-              )
-          );
+          return Scaffold(
+              body: Container(
+                decoration: BoxDecoration(
+                  color: Colors.black
+                ),
+                  height: 800,
+                  child: SafeArea(
+                      child: Column(children: [
+                    UserCard(
+                        userName: snapshot.data?.userData.login ?? "",
+                        avatar: snapshot.data?.userData.avatar ?? ""),
+                    RepoListView(repoList: snapshot.data?.repoList ?? []),
+                  ]))));
         } else {
           return const Center(
             child: CircularProgressIndicator(),
