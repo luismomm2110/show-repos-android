@@ -9,35 +9,40 @@ class RepoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Container(
-      decoration: BoxDecoration(color: Colors.white),
-      constraints: BoxConstraints(
-        maxWidth: 350,
-      ),
-      padding: const EdgeInsets.only(
-        left: 16,
-        right: 16,
-        top: 16,
-      ),
-      child: Column(
-        children: [
-          SizedBox(height: 15),
-          Row(
-            children: [
-              Flexible(
-                  child: Text(
-                repo.name!,
-                style: TextStyle(fontSize: 20, color: Colors.black),
-                overflow: TextOverflow.ellipsis,
-              ))
-            ],
+    return Column(
+      children: [
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(color: Colors.white),
+            constraints: BoxConstraints(
+              maxWidth: 350,
+            ),
+            padding: const EdgeInsets.only(
+              left: 16,
+              right: 16,
+              top: 16,
+            ),
+            child: Column(
+              children: [
+                SizedBox(height: 15),
+                Row(
+                  children: [
+                    Flexible(
+                        child: Text(
+                      repo.name!,
+                      style: TextStyle(fontSize: 20, color: Colors.black),
+                      overflow: TextOverflow.ellipsis,
+                    ))
+                  ],
+                ),
+                SizedBox(height: 40),
+                Text(repo.description!,
+                    style: TextStyle(fontSize: 25, color: Colors.black)),
+              ],
+            ),
           ),
-          SizedBox(height: 40),
-          Text(repo.description!,
-              style: TextStyle(fontSize: 25, color: Colors.black)),
-        ],
-      ),
-    ));
+        ),
+      ],
+    );
   }
 }
