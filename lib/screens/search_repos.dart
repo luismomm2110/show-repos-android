@@ -25,34 +25,50 @@ class _SearchRepoState extends State<SearchRepo> {
         child: Container(
           constraints: BoxConstraints.expand(),
           child: SafeArea(
-            child: Column(children: [
-              Container(
-                padding: EdgeInsets.all(20.0),
-                child: TextField(
-                  style: TextStyle(
-                    fontSize: 40.0,
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(20.0),
+                  child: TextField(
+                    style: TextStyle(
+                      fontSize: 40.0,
+                    ),
+                    onChanged: (value) {
+                      userLogin = value;
+                    },
                   ),
-                  onChanged: (value) {
-                    userLogin = value;
-                  },
                 ),
-              ),
-              TextButton(
-                onPressed: () async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) {
-                      return ResultScreen(userLogin: userLogin!);
-                    }),
-                  );
-                },
-                child: Text('Insert a Github username',
+                TextButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return ResultScreen(userLogin: userLogin!);
+                      }),
+                    );
+                  },
+                  child: Text(
+                    'Insert a Github username',
                     style: TextStyle(
                       fontSize: 30.0,
                       color: Colors.black,
-                    )),
-              )
-            ]),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 250),
+                 DecoratedBox(
+                  decoration:  BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(40)),
+                  child: Text(
+                    "Repo Cards",
+                    style: TextStyle(
+                      fontSize: 100,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
