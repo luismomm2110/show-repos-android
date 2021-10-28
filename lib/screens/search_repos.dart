@@ -38,32 +38,34 @@ class _SearchRepoState extends State<SearchRepo> {
                     },
                   ),
                 ),
-                TextButton(
-                  onPressed: () async {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return ResultScreen(userLogin: userLogin!);
-                      }),
-                    );
-                  },
-                  child: Text(
+                  Text(
                     'Insert a Github username',
                     style: TextStyle(
                       fontSize: 30.0,
                       color: Colors.black,
                     ),
                   ),
-                ),
-                SizedBox(height: 250),
-                 DecoratedBox(
-                  decoration:  BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(40)),
-                  child: Text(
-                    "Repo Cards",
-                    style: TextStyle(
-                      fontSize: 100,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                SizedBox(height: 150),
+                DecoratedBox(
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(40)),
+                  child: TextButton(
+                    onPressed: () async {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return ResultScreen(userLogin: userLogin!);
+                        }),
+                      );
+                    },
+                    child: Text(
+                      "Find Repos!",
+                      style: TextStyle(
+                        fontSize: 70,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

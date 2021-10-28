@@ -22,42 +22,49 @@ class ResultScreen extends StatelessWidget {
         return FutureBuilder(
           future: FetchRepos().getUserRepos(userLogin),
           builder: (context, AsyncSnapshot<UserRepos> snapshot) {
-            return Scaffold(
-              backgroundColor: Colors.black,
-              body: SingleChildScrollView(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minHeight: viewportConstraints.maxHeight,
-                  ),
-                  child: Column(
-                    children: [
-                      UserCard(
-                          userName: snapshot.data?.userData.login ?? "",
-                          avatar: snapshot.data?.userData.avatar ?? ""),
-                      SizedBox(height: 35),
-                      RepoListView(repoList: snapshot.data?.repoList ?? []),
-                      SizedBox(height: 60),
-                      ElevatedButton(
-                        onPressed: () {
-                          String _resultUrl =
-                              snapshot.data?.userData.htmlUrl ?? "";
-                          _resultUrl != "" ? launch(_resultUrl) : null;
-                        },
-                        child: Text(
-                          "Visit User Profile",
-                          style: TextStyle(fontSize: 30, color: Colors.black),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.grey,
-                            fixedSize: const Size(300, 100),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50))),
+            if (snapshot.connectionState == ConnectionState.done) {
+              return Scaffold(
+                backgroundColor: Colors.black,
+                body: SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: viewportConstraints.maxHeight,
+                    ),
+                    child: SafeArea(
+                      child: Column(
+                        children: [
+                          UserCard(
+                              userName: snapshot.data?.userData.login ?? "",
+                              avatar: snapshot.data?.userData.avatar ?? ""),
+                          SizedBox(height: 15),
+                          RepoListView(repoList: snapshot.data?.repoList ?? []),
+                          SizedBox(height: 20),
+                          ElevatedButton(
+                            onPressed: () {
+                              String _resultUrl =
+                                  snapshot.data?.userData.htmlUrl ?? "";
+                              _resultUrl != "" ? launch(_resultUrl) : null;
+                            },
+                            child: Text(
+                              "Visit User Profile",
+                              style:
+                                  TextStyle(fontSize: 30, color: Colors.black),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.grey,
+                                fixedSize: const Size(300, 100),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50))),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            );
+              );
+            } else {
+              return const Center(child: CircularProgressIndicator());
+            }
           },
         );
       },

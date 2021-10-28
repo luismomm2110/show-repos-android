@@ -7,7 +7,7 @@ class UserCard extends StatelessWidget {
   final String userName;
   final String avatar;
   final theme = Themes.darkTextTheme;
-  final double kRadiusAvatar = 120;
+  final double kRadiusAvatar = 100;
   final String kPlaceHolderAvatar = 'assets/octocat.png';
 
   UserCard({required this.userName, required this.avatar});
