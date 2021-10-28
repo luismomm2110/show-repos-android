@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:scroll_repos/models/Repo.dart';
 
 class RepoCard extends StatelessWidget {
@@ -13,7 +14,9 @@ class RepoCard extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            decoration: BoxDecoration(color: Colors.white),
+            decoration: BoxDecoration(
+                color: Colors.white,
+            borderRadius: BorderRadius.circular(20.0)),
             constraints: BoxConstraints(
               maxWidth: 350,
             ),
