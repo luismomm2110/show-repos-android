@@ -18,15 +18,14 @@ class _SearchRepoState extends State<SearchRepo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Show your repos',
-              style: theme.textTheme.headline6),
+        title: Text('Show your repos', style: theme.textTheme.headline6),
         backgroundColor: Colors.black,
       ),
-      body: Container(
-        constraints: BoxConstraints.expand(),
-        child: SafeArea(
-          child: Column(
-            children: [
+      body: Center(
+        child: Container(
+          constraints: BoxConstraints.expand(),
+          child: SafeArea(
+            child: Column(children: [
               Container(
                 padding: EdgeInsets.all(20.0),
                 child: TextField(
@@ -39,26 +38,24 @@ class _SearchRepoState extends State<SearchRepo> {
                 ),
               ),
               TextButton(
-                  onPressed: () async {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return ResultScreen(userLogin: userLogin!);
-                      }),
-                    );
-                  },
-                  child: Text(
-                    'Insert a Github username',
+                onPressed: () async {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return ResultScreen(userLogin: userLogin!);
+                    }),
+                  );
+                },
+                child: Text('Insert a Github username',
                     style: TextStyle(
-                        fontSize: 30.0,
-                        color: Colors.black,
-                      )
-                    ),
-                  )
-              ]
-            ),
+                      fontSize: 30.0,
+                      color: Colors.black,
+                    )),
+              )
+            ]),
           ),
-        )
-      );
+        ),
+      ),
+    );
   }
 }

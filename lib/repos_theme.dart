@@ -7,7 +7,7 @@ class Themes {
     bodyText1: GoogleFonts.openSans(
         fontSize: 14.0,
         fontWeight: FontWeight.w600,
-        color: Colors.white),
+        color: Colors.black),
     headline1: GoogleFonts.openSans(
         fontSize: 20.0,
         fontWeight: FontWeight.bold,
